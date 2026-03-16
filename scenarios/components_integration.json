@@ -1,6 +1,0 @@
-{
-    "Recorder": "../oedisi-example/Components/recorder/component_definition.json",
-    "LocalFeeder": "../oedisi-example/Components/LocalFeeder/component_definition.json",
-    "MeasurementComponent": "../oedisi-example/Components/measuring_federate/component_definition.json",
-    "StateEstimatorComponent": "component_definition.json"
-}
