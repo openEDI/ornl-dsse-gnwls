@@ -173,9 +173,7 @@ def _compute_power_jacobians(
     return joc_pn, joc_qn
 
 
-def _compute_voltage_jacobian(
-    voltage_indices: np.ndarray, nbus: int
-) -> np.ndarray:
+def _compute_voltage_jacobian(voltage_indices: np.ndarray, nbus: int) -> np.ndarray:
     """Compute Jacobian for voltage magnitude measurements.
 
     dV/dV = 1 at the measured bus, 0 elsewhere. dV/ddelta = 0.
@@ -226,10 +224,7 @@ def wls_estimate(
     # Convert Y-bus to per-unit: Y_pu = Y * V_base_i * V_base_j / S_base_VA
     S_base_VA = base_power * 1e6
     Y_pu = (
-        base_voltages.reshape(1, -1)
-        * Y_bus
-        * base_voltages.reshape(-1, 1)
-        / S_base_VA
+        base_voltages.reshape(1, -1) * Y_bus * base_voltages.reshape(-1, 1) / S_base_VA
     )
     G = np.real(Y_pu)
     B = np.imag(Y_pu)
@@ -258,11 +253,13 @@ def wls_estimate(
     w_pq = 1.0 / (sensor_error_pq**2) if sensor_error_pq > 0 else 1.0
     w_v = 1.0 / (sensor_error_v**2) if sensor_error_v > 0 else 1.0
     W = np.diag(
-        np.concatenate([
-            np.full(n_p, w_pq),
-            np.full(n_q, w_pq),
-            np.full(n_v, w_v),
-        ])
+        np.concatenate(
+            [
+                np.full(n_p, w_pq),
+                np.full(n_q, w_pq),
+                np.full(n_v, w_v),
+            ]
+        )
     )
 
     # Initial state: [V_1..V_n, delta_1..delta_n] in per-unit/radians

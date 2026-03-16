@@ -2,6 +2,8 @@
 
 import numpy as np
 import pytest
+from oedisi.types.data_types import AdmittanceMatrix, AdmittanceSparse
+
 from dsse_federate.wls_estimator import (
     _compute_power_injections,
     _compute_power_jacobians,
@@ -10,7 +12,6 @@ from dsse_federate.wls_estimator import (
     get_y,
     wls_estimate,
 )
-from oedisi.types.data_types import AdmittanceMatrix, AdmittanceSparse
 
 
 def _make_3bus_ybus():
