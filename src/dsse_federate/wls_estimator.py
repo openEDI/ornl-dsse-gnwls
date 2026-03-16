@@ -9,11 +9,7 @@ from typing import List, Optional, Tuple, Union
 import numpy as np
 import scipy.linalg
 import scipy.sparse
-from oedisi.types.data_types import (
-    AdmittanceMatrix,
-    AdmittanceSparse,
-    Complex,
-)
+from oedisi.types.data_types import AdmittanceMatrix, AdmittanceSparse, Complex
 
 
 def matrix_to_numpy(admittance: List[List[Complex]]) -> np.ndarray:
