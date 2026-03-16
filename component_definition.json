@@ -1,0 +1,18 @@
+{
+    "directory": "dsse_federate",
+    "execute_function": "python -m src.dsse_federate.dsse_federate",
+    "static_inputs": [
+        {"type": "", "port_id": "name", "description": "Federate name", "unit": ""},
+        {"type": "", "port_id": "algorithm_parameters", "description": "WLS parameters (tol, base_power)", "unit": ""}
+    ],
+    "dynamic_inputs": [
+        {"type": "VoltagesMagnitude", "port_id": "voltages_magnitude", "description": "Voltage magnitude measurements", "unit": "V"},
+        {"type": "PowersReal", "port_id": "powers_real", "description": "Real power measurements", "unit": "kW"},
+        {"type": "PowersImaginary", "port_id": "powers_imaginary", "description": "Reactive power measurements", "unit": "kVAR"},
+        {"type": "Topology", "port_id": "topology", "description": "Network topology with Y-bus", "unit": ""}
+    ],
+    "dynamic_outputs": [
+        {"type": "VoltagesMagnitude", "port_id": "voltage_mag", "description": "Estimated voltage magnitudes", "unit": "V"},
+        {"type": "VoltagesAngle", "port_id": "voltage_angle", "description": "Estimated voltage angles", "unit": "deg"}
+    ]
+}

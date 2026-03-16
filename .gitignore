@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Testing
+.pytest_cache/
+
+# OEDISI simulation outputs
+outputs/
+feeder/
+state_estimator/
+sensors/
+recorder_*
+local_feeder/
+*.feather
+*.log
+*.bak
+test_system_runner.json
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+*.env
+.env
+
+# macOS
+.DS_Store
