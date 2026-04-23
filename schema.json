@@ -1,0 +1,10 @@
+{
+  "title": "ComponentParameters",
+  "type": "object",
+  "properties": {
+    "tol":        { "title": "Tolerance",      "type": "number"  },
+    "base_power": { "title": "Base Power",     "type": "number"  },
+    "max_iter":   { "title": "Max Iterations", "type": "integer" }
+  },
+  "required": [ "tol", "base_power", "max_iter" ]
+}
